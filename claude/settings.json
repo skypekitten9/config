@@ -1,0 +1,62 @@
+{
+  "syncClaudeAiSkills": false,
+  "syncClaudeAiPlugins": false,
+  "permissions": {
+    "deny": [
+      "NotebookEdit",
+      "DesignSync",
+      "CronCreate",
+      "CronDelete",
+      "CronList",
+      "EnterPlanMode",
+      "ExitPlanMode",
+      "PushNotification",
+      "RemoteTrigger",
+      "ReportFindings",
+      "ScheduleWakeup",
+      "AskUserQuestion",
+      "SendFeedback",
+      "TaskCreate",
+      "TaskUpdate",
+      "TaskList",
+      "PublishPlugin",
+      "ShareOnboardingGuide",
+      "SendToProject",
+      "SendToProjectContext"
+    ]
+  },
+  "model": "opus",
+  "disableClaudeAiConnectors": true,
+  "skillOverrides": {
+    "anthropic-skills:built-in-browser": "off",
+    "anthropic-skills:chrome-browser": "off",
+    "anthropic-skills:computer-use": "off",
+    "anthropic-skills:docs": "off",
+    "anthropic-skills:docx": "off",
+    "anthropic-skills:pdf": "off",
+    "anthropic-skills:pptx": "off",
+    "anthropic-skills:xlsx": "off"
+  },
+  "disableBundledSkills": true,
+  "disableWorkflows": true,
+  "disableArtifact": true,
+  "statusLine": {
+    "type": "command",
+    "command": "python3 -I ~/.claude/statusline.py"
+  },
+  "enabledPlugins": {
+    "cc-plugin-plugin-authoring@builtin": false,
+    "cc-plugin-promos@builtin": false,
+    "cc-plugin-telemetry@builtin": false,
+    "mattpocock-skills@claude-plugins-official": true
+  },
+  "modelSettings": {
+    "claude-haiku-5-5": {
+      "effortLevel": "high"
+    },
+    "claude-opus-5-5": {
+      "effortLevel": "medium"
+    }
+  },
+  "autoMemoryEnabled": false
+}
