@@ -4,10 +4,10 @@ My personal dotfiles and tool configuration.
 
 | File | Goes to | What it is |
 |---|---|---|
-| `zsh/.zshrc` | `~/.zshrc` | Zsh config (Oh My Zsh with `git`, `z`, `zsh-autosuggestions`) |
+| `zsh/.zshrc` | `~/.zshrc` | Zsh config (Oh My Zsh) |
 | `claude/settings.json` | `~/.claude/settings.json` | Claude Code settings |
-| `claude/statusline.py` | `~/.claude/statusline.py` | Claude Code status line showing context usage, model and effort level, e.g. `📦 20.3k 🦀 Opus 5.5 🧠 Medium` |
-| `npm/.npmrc` | `~/.npmrc` | npm config (install scripts off except allowlisted packages, 7-day minimum release age) |
+| `claude/statusline.py` | `~/.claude/statusline.py` | Claude Code status line script |
+| `npm/.npmrc` | `~/.npmrc` | npm config |
 
 To use any of these, copy the file to the path in the "Goes to" column.
 
