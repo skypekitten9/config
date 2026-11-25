@@ -69,8 +69,8 @@ def main() -> None:
     changes = git_changes(cwd) if branch else None
 
     BRIGHT_WHITE = "\033[97m"
-    GREEN = "\033[38;2;78;193;78m"  # #4ec14e
-    RED = "\033[38;2;200;83;83m"  # #c85353
+    GREEN = "\033[38;2;56;166;96m"  # #38a660, Claude Code dark theme diffAddedWord
+    RED = "\033[38;2;179;89;107m"  # #b3596b, Claude Code dark theme diffRemovedWord
     RESET = "\033[0m"
 
     parts = [f"📦 {BRIGHT_WHITE}{fmt(tokens)}{RESET}"]
