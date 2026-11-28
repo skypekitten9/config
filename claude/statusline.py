@@ -68,28 +68,29 @@ def main() -> None:
     branch = git(cwd, "branch", "--show-current") or ""
     changes = git_changes(cwd) if branch else None
 
-    BRIGHT_WHITE = "\033[97m"
-    GREEN = "\033[38;2;56;166;96m"  # #38a660, Claude Code dark theme diffAddedWord
-    RED = "\033[38;2;179;89;107m"  # #b3596b, Claude Code dark theme diffRemovedWord
+    # Mid-tone colors with roughly 4.5:1 contrast on both white and near-black
+    # backgrounds, so they read well in light and dark themes alike.
+    GREEN = "\033[38;2;24;138;64m"  # #188a40
+    RED = "\033[38;2;208;54;79m"  # #d0364f
     RESET = "\033[0m"
 
-    parts = [f"📦 {BRIGHT_WHITE}{fmt(tokens)}{RESET}"]
+    parts = [f"📦 {fmt(tokens)}"]
     if model_name:
-        parts.append(f"🦀 {BRIGHT_WHITE}{model_name}{RESET}")
+        parts.append(f"🦀 {model_name}")
     if effort_level:
-        parts.append(f"🧠 {BRIGHT_WHITE}{effort_level.capitalize()}{RESET}")
+        parts.append(f"🧠 {effort_level.capitalize()}")
     if branch:
-        branch_part = f"🌳 {BRIGHT_WHITE}{branch}{RESET}"
+        branch_part = f"🌳 {branch}"
         if changes:
             files, added, removed = changes
             if files:
                 label = "file" if files == 1 else "files"
                 branch_part += (
-                    f" {BRIGHT_WHITE}({files} {label}, "
-                    f"{GREEN}+{added}{BRIGHT_WHITE}/{RED}-{removed}{BRIGHT_WHITE}){RESET}"
+                    f" ({files} {label}, "
+                    f"{GREEN}+{added}{RESET}/{RED}-{removed}{RESET})"
                 )
             else:
-                branch_part += f" {BRIGHT_WHITE}(clean){RESET}"
+                branch_part += " (clean)"
         parts.append(branch_part)
     print(" ".join(parts))
 
